@@ -1,1 +1,49 @@
+# Bituminous Mastic – AI-Assisted Analysis
 
+This folder contains the AI-assisted analyses developed for the investigation of the Aging Index of bituminous mastics.
+
+## Dataset
+
+The analyses use the experimental dataset:
+
+`Aging index.xlsx`
+
+The dataset contains Aging Index measurements for different filler types, filler-to-bitumen ratios, and angular frequencies.
+
+## Analyses
+
+### GA–PSO
+
+[GA_PSO](./GA_PSO/)
+
+Genetic Algorithm (GA) and Particle Swarm Optimization (PSO) are used to estimate the coefficients of an empirical Aging Index model.
+
+### Artificial Neural Network
+
+[ANN](./ANN/)
+
+An Artificial Neural Network (ANN) is used to predict the Aging Index using filler type, filler-to-bitumen ratio, and frequency-related information.
+
+### Gaussian Process Regression
+
+[GPR](./GPR/)
+
+Gaussian Process Regression (GPR) is used to predict the Aging Index using a nested Leave-One-Mastic-Out validation framework.
+
+### Support Vector Regression
+
+[SVR](./SVR/)
+
+Support Vector Regression (SVR) is used to predict the Aging Index using different kernel functions and nested Leave-One-Mastic-Out validation.
+
+### SHAP
+
+[SHAP](./SHAP/)
+
+SHAP analysis is used to interpret the predictions of the final GPR model and quantify the contribution of the model input variables.
+
+## Repository Structure
+
+Each analysis method is provided in a separate folder containing its Jupyter notebook and dedicated documentation.
+
+The shared experimental dataset is stored in the main `Bituminous_Mastic` folder.
