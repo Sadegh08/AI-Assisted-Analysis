@@ -2,12 +2,10 @@
 
 This folder contains the AI-assisted analyses developed for cement mortar mixtures.
 
-Two main research directions are investigated:
+Two main analysis categories are investigated:
 
 - Mechanical Properties
 - Gauge Factor (GF)
-
----
 
 ## Mechanical Properties
 
@@ -22,7 +20,7 @@ The input variables are:
 - Plasticizer dosage
 - Density
 
-The following modelling approaches are evaluated:
+The evaluated methods include:
 
 - Genetic Algorithm (GA)
 - Particle Swarm Optimization (PSO)
@@ -30,41 +28,78 @@ The following modelling approaches are evaluated:
 - Gaussian Process Regression (GPR)
 - Support Vector Regression (SVR)
 
-Model interpretation is performed using SHAP analysis based on the GPR models.
+GA and PSO are used to optimize the coefficients of empirical models for the mechanical responses.
 
-The complete analysis is available in:
+ANN, GPR, and SVR are used as machine-learning regression models.
 
-`Mechanical_Properties/`
+SHAP analysis is used to interpret the GPR model predictions.
 
----
+The analyses are available in:
+
+- [GA_PSO](./Mechanical_Properties/GA_PSO/)
+- [ANN](./Mechanical_Properties/ANN/)
+- [GPR](./Mechanical_Properties/GPR/)
+- [SVR](./Mechanical_Properties/SVR/)
+- [SHAP](./Mechanical_Properties/SHAP/)
 
 ## Gauge Factor (GF)
 
-The Gauge Factor analysis investigates the prediction of the average final gauge factor (GFend) of mortar mixtures.
+The Gauge Factor analysis focuses on predicting the average final gauge factor (GFend) of cement mortar mixtures.
 
 The input variables are:
 
 - Sludge content
 - Plasticizer dosage
 
-Due to the limited number of experimental conditions, interpolation methods are applied:
+Because of the limited number of experimental mixture conditions, two interpolation methods are applied:
 
-- PCHIP interpolation
+- Piecewise Cubic Hermite Interpolating Polynomial (PCHIP)
 - Akima interpolation
 
-The interpolated datasets are used for predictive modelling using:
+The interpolated datasets are evaluated using:
 
 - Artificial Neural Network (ANN)
 - Gaussian Process Regression (GPR)
 - Support Vector Regression (SVR)
 
-SHAP analysis is applied for interpretation of the selected GPR model.
+Model performance is evaluated using Nested Leave-One-Out Cross-Validation (LOOCV).
 
-The complete analysis is available in:
+SHAP analysis is applied to interpret the selected GPR model.
 
-`Gauge_Factor/`
+The complete Gauge Factor analysis is available in:
 
----
+- [Gauge_Factor](./Gauge_Factor/)
 
 ## Repository Structure
 
+```text
+Mortar(cement)/
+├── README.md
+│
+├── Mechanical_Properties/
+│   ├── GA_PSO/
+│   │   ├── README.md
+│   │   └── GA_and_PSO.ipynb
+│   ├── ANN/
+│   │   ├── README.md
+│   │   └── ANN.ipynb
+│   ├── GPR/
+│   │   ├── README.md
+│   │   └── GPR.ipynb
+│   ├── SVR/
+│   │   ├── README.md
+│   │   └── SVR.ipynb
+│   └── SHAP/
+│       ├── README.md
+│       └── SHAP_GPR.ipynb
+│
+└── Gauge_Factor/
+    ├── README.md
+    └── Mortar_GFend_Modeling.ipynb
+```
+
+## Reproducibility
+
+The notebooks document the data preparation, model development, validation, prediction, and interpretation procedures used in the analyses.
+
+The corresponding modelling and validation frameworks are applied consistently within each analysis to support reproducibility of the reported results.
