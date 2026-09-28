@@ -1,27 +1,47 @@
 # AI-Assisted-Analysis
 AI-assisted data analysis and visualization supporting experimental research.
 
-# Mortar (Cement) – AI-Assisted Analysis
+# AI-Assisted Analysis
 
-This folder contains the AI-assisted analyses developed for cement mortar mixtures.
+This repository contains AI-assisted data analysis, optimization, machine-learning modeling, and model-interpretation workflows developed to support experimental research.
 
-Two main analysis categories are investigated:
+The repository is organized into four main research sections:
 
-- Mechanical Properties
-- Gauge Factor (GF)
+- Hydrometallurgy
+- Briquette
+- Bituminous Mastic
+- Mortar (Cement)
 
-## Mechanical Properties
+## Hydrometallurgy
 
-The mechanical property analysis focuses on predicting:
+The Hydrometallurgy section contains data analysis and visualization of elemental concentrations in leachate samples.
 
-- Maximum flexural stress
-- Mean compressive strength
+The analysis includes:
 
-The input variables are:
+- EN 888 compliance classification
+- Quality scoring
+- Hierarchical clustering
+- Comparison of Cr, Ni, and Mn concentrations
 
-- Sludge content
-- Plasticizer dosage
-- Density
+[View Hydrometallurgy analysis](./Hydrometallurgy/)
+
+## Briquette
+
+The Briquette section contains AI-assisted analysis of briquette performance.
+
+The analysis includes:
+
+- Compression strength
+- Durability
+- Standardized hierarchical clustering
+- Numerical linkage analysis
+- Performance comparison among briquette formulations
+
+[View Briquette analysis](./Briquette/)
+
+## Bituminous Mastic
+
+The Bituminous Mastic section contains modeling and interpretation of the Aging Index of bituminous mastics.
 
 The evaluated methods include:
 
@@ -30,83 +50,60 @@ The evaluated methods include:
 - Artificial Neural Network (ANN)
 - Gaussian Process Regression (GPR)
 - Support Vector Regression (SVR)
+- SHAP model interpretation
 
-GA and PSO are used to optimize the coefficients of empirical models for the mechanical responses.
+A shared experimental dataset is used across the different modeling approaches.
 
-ANN, GPR, and SVR are used as machine-learning regression models.
+[View Bituminous Mastic analysis](./Bituminous_Mastic/)
 
-SHAP analysis is used to interpret the GPR model predictions.
+## Mortar (Cement)
 
-The analyses are available in:
+The Mortar section contains two main analysis categories:
 
-- [GA_PSO](./Mechanical_Properties/GA_PSO/)
-- [ANN](./Mechanical_Properties/ANN/)
-- [GPR](./Mechanical_Properties/GPR/)
-- [SVR](./Mechanical_Properties/SVR/)
-- [SHAP](./Mechanical_Properties/SHAP/)
+### Mechanical Properties
 
-## Gauge Factor (GF)
+The mechanical-property analysis focuses on:
 
-The Gauge Factor analysis focuses on predicting the average final gauge factor (GFend) of cement mortar mixtures.
+- Maximum flexural stress
+- Mean compressive strength
 
-The input variables are:
+The evaluated methods include:
 
-- Sludge content
-- Plasticizer dosage
+- GA and PSO empirical-model optimization
+- ANN
+- GPR
+- SVR
+- SHAP interpretation
 
-Because of the limited number of experimental mixture conditions, two interpolation methods are applied:
+### Gauge Factor
 
-- Piecewise Cubic Hermite Interpolating Polynomial (PCHIP)
+The Gauge Factor analysis focuses on predicting the average final gauge factor (GFend).
+
+The workflow includes:
+
+- PCHIP interpolation
 - Akima interpolation
+- ANN
+- GPR
+- SVR
+- Nested Leave-One-Out Cross-Validation
+- SHAP interpretation
 
-The interpolated datasets are evaluated using:
-
-- Artificial Neural Network (ANN)
-- Gaussian Process Regression (GPR)
-- Support Vector Regression (SVR)
-
-Model performance is evaluated using Nested Leave-One-Out Cross-Validation (LOOCV).
-
-SHAP analysis is applied to interpret the selected GPR model.
-
-The complete Gauge Factor analysis is available in:
-
-[Gauge_Factor](./Gauge_Factor/)
+[View Mortar (Cement) analysis](./Mortar(Cement)/)
 
 ## Repository Structure
 
 ```text
-Mortar(cement)/
+AI-Assisted-Analysis/
 ├── README.md
-│
-├── Mechanical_Properties/
-│   ├── GA_PSO/
-│   │   ├── README.md
-│   │   └── GA_and_PSO.ipynb
-│   │
-│   ├── ANN/
-│   │   ├── README.md
-│   │   └── ANN.ipynb
-│   │
-│   ├── GPR/
-│   │   ├── README.md
-│   │   └── GPR.ipynb
-│   │
-│   ├── SVR/
-│   │   ├── README.md
-│   │   └── SVR.ipynb
-│   │
-│   └── SHAP/
-│       ├── README.md
-│       └── SHAP_GPR.ipynb
-│
-└── Gauge_Factor/
-    ├── README.md
-    └── Mortar_GFend_Modeling.ipynb
+├── Hydrometallurgy/
+├── Briquette/
+├── Bituminous_Mastic/
+└── Mortar(Cement)/
 ```
 
 ## Reproducibility
 
-The notebooks document the data preparation, model development, validation, prediction, and interpretation procedures used in the analyses.
+The notebooks document the data preparation, statistical analysis, optimization, machine-learning modeling, validation, visualization, and model-interpretation procedures used in the corresponding research sections.
 
-The corresponding modelling and validation frameworks are applied consistently within each analysis to support reproducibility of the reported results.
+Each analysis folder contains its associated notebooks and documentation to support reproducibility of the reported results.
