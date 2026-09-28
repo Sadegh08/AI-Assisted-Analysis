@@ -1,7 +1,5 @@
-# AI-Assisted-Analysis
-AI-assisted data analysis and visualization supporting experimental research.
-
 # AI-Assisted Analysis
+AI-assisted data analysis and visualization supporting experimental research.
 
 This repository contains AI-assisted data analysis, optimization, machine-learning modeling, and model-interpretation workflows developed to support experimental research.
 
