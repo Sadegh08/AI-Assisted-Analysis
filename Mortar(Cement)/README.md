@@ -73,7 +73,7 @@ The complete Gauge Factor analysis is available in:
 ## Repository Structure
 
 ```text
-Mortar(cement)/
+Mortar(Cement)/
 ├── README.md
 │
 ├── Mechanical_Properties/
